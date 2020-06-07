@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Rows from './components/Rows.js'
 
@@ -49,7 +48,11 @@ class App extends React.Component{
   
   
   render(){
-      
+
+    const rows = []; 
+     for(let i = 0; i < this.state.tableRow; i++){
+       rows.push(<Rows rowAmt = {this.state.tableRow}/>)
+     }
 
     return(
       <div>
@@ -58,7 +61,7 @@ class App extends React.Component{
         <button onClick={() => this.handleDecRows()}>Remove rows</button>
         <button onClick={() => this.handleDecCols()}>Remove cols</button>
         <table>
-          <Rows rowAmt = {this.state.tableRow} colAmt = {this.state.tableCol} bg='red'/>
+          {rows}
         </table>
         <h1>{this.state.tableRow}</h1>
         <h1>{this.state.tableCol}</h1>

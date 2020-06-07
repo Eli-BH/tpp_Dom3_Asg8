@@ -6,14 +6,13 @@ import TableCell from './TableCell.js';
 
 
 const Rows = (props) =>{
-    let cols = [];
-    let rows = props.rowAmt;  
+    let cols = []; 
     for(let i = 0; i < props.colAmt; i++){
-        cols.push(<TableCell rows = {rows}/>)
+        cols.push(<TableCell/>)
     }
 
     return (
-        <tr>{cols}</tr>
+        <tr>dfs</tr>
     )
 }
 
