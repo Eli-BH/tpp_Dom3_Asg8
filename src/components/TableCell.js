@@ -1,7 +1,7 @@
 import React from 'react'; 
 
 
-function TableCell(props){
+const  TableCell = () =>{
     return <td>Hello</td>  
 }
 

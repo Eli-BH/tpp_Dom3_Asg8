@@ -51,7 +51,7 @@ class App extends React.Component{
 
     const rows = []; 
      for(let i = 0; i < this.state.tableRow; i++){
-       rows.push(<Rows rowAmt = {this.state.tableRow}/>)
+       rows.push(<Rows colAmt = {this.state.tableCol}/>)
      }
 
     return(

@@ -12,7 +12,7 @@ const Rows = (props) =>{
     }
 
     return (
-        <tr>dfs</tr>
+        <tr>{cols}</tr>
     )
 }
 
