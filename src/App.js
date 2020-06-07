@@ -12,7 +12,8 @@ class App extends React.Component{
       currColor: '', 
       tableRow: 1,
       tableCol: 1,
-      bgColor: 'white' 
+      bgColor: 'black',
+      allColor: false 
     }
     //handelers to add and remove rows and columns
 
@@ -20,6 +21,7 @@ class App extends React.Component{
     this.handleCols = this.handleCols.bind(this);
     this.handleDecRows = this.handleDecRows.bind(this);
     this.handleDecCols = this.handleDecCols.bind(this);
+    this.toggleAll = this.toggleAll.bind(this);
   }
 
 
@@ -57,14 +59,42 @@ class App extends React.Component{
     event.target.style.backgroundColor = this.state.bgColor 
   }
 
-  
-  
-  render(){
+  toggleAll = () =>{
+    if(this.state.allColor == true){
+      this.setState({allColor:false});
+    } else {
+      this.setState({allColor:true});
+    }
+  }
 
+  render(){
+  
+    const cellStyle = {
+      backgroundColor: this.state.bgColor
+    }
+    const clearStyle ={
+      backgroundColor: '#0B5F75'
+    }
     const rows = []; 
+
      for(let i = 0; i < this.state.tableRow; i++){
-       rows.push(<Rows colAmt = {this.state.tableCol} colorToggle={this.changeColor} bgColor={this.bgColor}/>)
-     }
+       (this.state.allColor) ?
+          rows.push(<Rows 
+          style={ cellStyle}  
+          allColor={this.state.allColor} 
+          colAmt = {this.state.tableCol} 
+          colorToggle={this.changeColor} 
+          bgColor={this.bgColor}/>) :
+          rows.push(<Rows 
+            style={
+              clearStyle
+            } 
+            allColor={this.state.allColor} 
+            colAmt = {this.state.tableCol} 
+            colorToggle={this.changeColor} 
+            bgColor={this.bgColor}/>)
+
+     };
 
      console.log(this.state.bgColor);
 
@@ -75,11 +105,12 @@ class App extends React.Component{
         </div>
         <hr />
         <div className = 'buttons'>
-          <button onClick={() => this.handleRows()}>Add rows</button> 
-          <button onClick={() => this.handleCols()}>Add cols</button>
-          <button onClick={() => this.handleDecRows()}>Remove rows</button>
-          <button onClick={() => this.handleDecCols()}>Remove cols</button>
-          <select onChange = {this.colorSelect}>
+          <button className ="btn" onClick={() => this.handleRows()}>Add rows</button> 
+          <button className ="btn" onClick={() => this.handleCols()}>Add cols</button>
+          <button className ="btn" onClick={() => this.handleDecRows()}>Remove rows</button>
+          <button className ="btn" onClick={() => this.handleDecCols()}>Remove cols</button>
+          <button className ="btn" onClick={() => this.toggleAll()}>Toggle All</button>
+           <select className ="btn" onChange = {this.colorSelect}>
              <option value='#000000'>Black</option>
              <option value='#A0522D'>Brown</option>
              <option value='#B22222'>Red</option>
@@ -92,9 +123,10 @@ class App extends React.Component{
              <option value='#FF0080'>Fuschia</option>
              <option value='#FFFFF0'>Ivory</option>  
           </select>
+
         </div>
 
-          <h1>Rows: {this.state.tableRow} Columns: {this.state.tableCol}</h1>
+          <h1 className ='indic'>Rows: {this.state.tableRow} Columns: {this.state.tableCol}</h1>
           <table>
             {rows}
           </table>
