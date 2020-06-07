@@ -14,7 +14,7 @@ const Rows = (props) =>{
     for(let i = 0; i < props.colAmt; i++){
         cols.push(<Cols allColor ={props.allColor}  style = {props.style} colorToggle = {cellColorChange} bgColor = {props.bgColor}/>)
     }
-
+//return a cols number of  rows of the colomns
     return (
         <tr>{cols}</tr>
     )

@@ -48,17 +48,18 @@ class App extends React.Component{
       {tableCol: this.state.tableCol - 1}
     );
   }
-
+//function to select a color
   colorSelect = (event) =>{
     this.setState(
       {bgColor: event.target.value}
     );
   }
-  
+  //function to change to the selected color
   changeColor = (event) => {
     event.target.style.backgroundColor = this.state.bgColor 
   }
-
+  //function toggles the all color state, which decides if full colored cells are
+  //rendered as opposed to the individually colored cells
   toggleAll = () =>{
     if(this.state.allColor == true){
       this.setState({allColor:false});
@@ -68,12 +69,13 @@ class App extends React.Component{
   }
 
   render(){
-  
+    //toggles cell background color on render
     const cellStyle = {
       backgroundColor: this.state.bgColor
     }
+    //toggles background color off render
     const clearStyle ={
-      backgroundColor: '#0B5F75'
+      backgroundColor: null
     }
     const rows = []; 
 
