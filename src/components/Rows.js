@@ -4,11 +4,14 @@ import TableCell from './TableCell.js';
 
 
 
-
+//rows function takes the state of from app and 
+//creates an array of <tableCell> which is the columns (row additions - horizontal)
+//and returns copies the vertical columns of the horizontal lines
+//props are the ammoint of rows (horizontal elements) 
 const Rows = (props) =>{
     let cols = []; 
     for(let i = 0; i < props.colAmt; i++){
-        cols.push(<TableCell/>)
+        cols.push(<TableCell bgColor = {props.bgColor}/>)
     }
 
     return (
