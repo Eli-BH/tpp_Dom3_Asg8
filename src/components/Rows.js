@@ -1,6 +1,6 @@
 import React from 'react'
 import './cellsStyle.css'
-import TableCell from './TableCell.js';
+import Cols from './Cols.js';
 
 
 
@@ -10,8 +10,9 @@ import TableCell from './TableCell.js';
 //props are the ammoint of rows (horizontal elements) 
 const Rows = (props) =>{
     let cols = []; 
+    let cellColorChange = props.colorToggle;
     for(let i = 0; i < props.colAmt; i++){
-        cols.push(<TableCell bgColor = {props.bgColor}/>)
+        cols.push(<Cols colorToggle = {cellColorChange} bgColor = {props.bgColor}/>)
     }
 
     return (

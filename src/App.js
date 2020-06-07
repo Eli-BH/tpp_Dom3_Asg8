@@ -12,7 +12,7 @@ class App extends React.Component{
       currColor: '', 
       tableRow: 1,
       tableCol: 1,
-      bgColor: '' 
+      bgColor: 'white' 
     }
     //handelers to add and remove rows and columns
 
@@ -52,7 +52,10 @@ class App extends React.Component{
       {bgColor: event.target.value}
     );
   }
-
+  
+  changeColor = (event) => {
+    event.target.style.backgroundColor = this.state.bgColor 
+  }
 
   
   
@@ -60,34 +63,42 @@ class App extends React.Component{
 
     const rows = []; 
      for(let i = 0; i < this.state.tableRow; i++){
-       rows.push(<Rows colAmt = {this.state.tableCol} bgColor={this.bgColor}/>)
+       rows.push(<Rows colAmt = {this.state.tableCol} colorToggle={this.changeColor} bgColor={this.bgColor}/>)
      }
 
      console.log(this.state.bgColor);
 
     return(
-      <div>
-        <button onClick={() => this.handleRows()}>Add rows</button> 
-        <button onClick={() => this.handleCols()}>Add cols</button>
-        <button onClick={() => this.handleDecRows()}>Remove rows</button>
-        <button onClick={() => this.handleDecCols()}>Remove cols</button>
-        <select onChange = {this.colorSelect}>
-           <option value='black'>Black</option>
-           <option value='brown'>Brown</option>
-           <option value='red'>Red</option>
-           <option value='orange'>Orange</option>
-           <option value='yellow'>Yellow</option>
-           <option value='green'>Green</option>
-           <option value='blue'>Blue</option>
-           <option value='purple'>Purple</option>
-           <option value='grey'>Grey</option>
-           <option value='fuschia'>Fuschia</option>  
-        </select>
-        <h1>Rows: {this.state.tableRow} Columns: {this.state.tableCol}</h1>
-        <table>
-          {rows}
-        </table>
-        
+      <div className ='wrapper'>
+        <div className = 'heading'>
+          <h1>React Dom 3</h1> 
+        </div>
+        <hr />
+        <div className = 'buttons'>
+          <button onClick={() => this.handleRows()}>Add rows</button> 
+          <button onClick={() => this.handleCols()}>Add cols</button>
+          <button onClick={() => this.handleDecRows()}>Remove rows</button>
+          <button onClick={() => this.handleDecCols()}>Remove cols</button>
+          <select onChange = {this.colorSelect}>
+             <option value='#000000'>Black</option>
+             <option value='#A0522D'>Brown</option>
+             <option value='#B22222'>Red</option>
+             <option value='#FF8C00'>Orange</option>
+             <option value='#FFFF33'>Yellow</option>
+             <option value='#008000'>Green</option>
+             <option value='#4169E1'>Blue</option>
+             <option value='#9400D3'>Purple</option>
+             <option value='#808080'>Grey</option>
+             <option value='#FF0080'>Fuschia</option>
+             <option value='#FFFFF0'>Ivory</option>  
+          </select>
+        </div>
+
+          <h1>Rows: {this.state.tableRow} Columns: {this.state.tableCol}</h1>
+          <table>
+            {rows}
+          </table>
+
       </div>
     )
   }
