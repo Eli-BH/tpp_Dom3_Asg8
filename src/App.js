@@ -24,25 +24,25 @@ class App extends React.Component{
     this.toggleAll = this.toggleAll.bind(this);
   }
 
-
+//adds rows
   handleRows(){
     this.setState(
       {tableRow: this.state.tableRow + 1}
     );
   }
-
+//decreases rows
   handleDecRows(){
     this.setState(
       {tableRow: this.state.tableRow - 1}
     );
   }
-
+//adds columns 
   handleCols(){
     this.setState(
       {tableCol: this.state.tableCol + 1}
     );
   }
-
+//decrements columns 
   handleDecCols(){
     this.setState(
       {tableCol: this.state.tableCol - 1}
@@ -129,6 +129,7 @@ class App extends React.Component{
         </div>
 
           <h1 className ='indic'>Rows: {this.state.tableRow} Columns: {this.state.tableCol}</h1>
+          <h3 className ='indic'>Click and drag over a cell to 'paint' </h3>
           <table>
             {rows}
           </table>
