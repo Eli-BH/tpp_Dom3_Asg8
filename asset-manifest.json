@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Eli-b-good.github.io/tpp_Dom3_Asg8/static/css/main.7b062383.chunk.css",
+    "main.js": "/Eli-b-good.github.io/tpp_Dom3_Asg8/static/js/main.0631094c.chunk.js",
+    "main.js.map": "/Eli-b-good.github.io/tpp_Dom3_Asg8/static/js/main.0631094c.chunk.js.map",
+    "runtime-main.js": "/Eli-b-good.github.io/tpp_Dom3_Asg8/static/js/runtime-main.2d04a42c.js",
+    "runtime-main.js.map": "/Eli-b-good.github.io/tpp_Dom3_Asg8/static/js/runtime-main.2d04a42c.js.map",
+    "static/js/2.7d9d8701.chunk.js": "/Eli-b-good.github.io/tpp_Dom3_Asg8/static/js/2.7d9d8701.chunk.js",
+    "static/js/2.7d9d8701.chunk.js.map": "/Eli-b-good.github.io/tpp_Dom3_Asg8/static/js/2.7d9d8701.chunk.js.map",
+    "index.html": "/Eli-b-good.github.io/tpp_Dom3_Asg8/index.html",
+    "precache-manifest.2dd1de81b4e719dafab75f4f63b729ed.js": "/Eli-b-good.github.io/tpp_Dom3_Asg8/precache-manifest.2dd1de81b4e719dafab75f4f63b729ed.js",
+    "service-worker.js": "/Eli-b-good.github.io/tpp_Dom3_Asg8/service-worker.js",
+    "static/css/main.7b062383.chunk.css.map": "/Eli-b-good.github.io/tpp_Dom3_Asg8/static/css/main.7b062383.chunk.css.map",
+    "static/js/2.7d9d8701.chunk.js.LICENSE.txt": "/Eli-b-good.github.io/tpp_Dom3_Asg8/static/js/2.7d9d8701.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2d04a42c.js",
+    "static/js/2.7d9d8701.chunk.js",
+    "static/css/main.7b062383.chunk.css",
+    "static/js/main.0631094c.chunk.js"
+  ]
+}
